@@ -1,9 +1,13 @@
-# Maven
+#  <img src="./images/logotipo.png" width="32" height="32"> Maven
 > A streaming system made with Angular, Node.js and PWA - Progress Web App.
+
+<span style="position: relative; left: 35%; ">
 
 ![languages](https://img.shields.io/badge/languages-4-blue) ![MIT](https://img.shields.io/badge/license-MIT-brightgreen)
 
-[Imagem::Gif]
+</span>
+
+![Maven](./images/Maven.png)
 
 ### Installation
 1. Front-End
@@ -24,7 +28,7 @@ $ npm start
 
 3. [Http-server](https://www.npmjs.com/package/http-server)
 ```sh
-$ http-server -p 8080 -c-1 dist/<project-name>
+$ http-server -p 4200 -c-1 dist/<project-name>
 ```
 
 ## Contribution
