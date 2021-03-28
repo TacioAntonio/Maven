@@ -1,0 +1,29 @@
+<section class="container">
+  <app-navbar link="/main"></app-navbar>
+
+  <span [ngClass]="{ 'invisible' : !save }">
+    Salvo
+  </span>
+
+  <form class="form center" [formGroup]="midiaForm" (ngSubmit)="onSubmit()">
+    <h2>Insert mídia</h2><br />
+
+    <input class="form__input" placeholder="Name" formControlName="name" minlength="1" maxlength="50" required><br />
+    <input class="form__input" placeholder="TrailerUrl" formControlName="trailerUrl" minlength="1" maxlength="50"
+      required><br />
+
+    <select class="form__select" formControlName="category" required>
+      <option value="" disabled>Choose</option>
+      <option *ngFor="let midia of ['Movies', 'Series']" [value]="midia">{{midia}}</option>
+    </select>
+
+    <span class="form__uploadGroup">
+      <label class="form__upload" for="form__upload">Select a file &#187;</label>
+      <input id="form__upload" type="file" formControlName="imagePath" (input)="fileChoosen($event)">
+      <span [ngClass]="{ 'form__fileMessage' : true, 'invisible' : !choosen }">Selected image</span>
+      <span [ngClass]="{ 'form__fileMessage' : true, 'invisible' : choosen }">Select an image</span>
+    </span>
+
+    <button class="btn" (click)="submitPhoto()" [disabled]="midiaForm.invalid">Insert</button>
+  </form>
+</section>

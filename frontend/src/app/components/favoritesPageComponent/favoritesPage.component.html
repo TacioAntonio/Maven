@@ -1,0 +1,14 @@
+<section class="container">
+  <app-navbar link="/main"></app-navbar>
+
+  <span class="container__wrapper" *ngIf="favoriteMidias['length'] else emptyFavoriteMidias">
+    <img *ngFor="let favoriteMidia of favoriteMidias" class="container__item" [src]="favoriteMidia.imagePath"
+      [alt]="favoriteMidia.name" [title]="favoriteMidia.name">
+  </span>
+
+  <ng-template #emptyFavoriteMidias>
+    <h3 class="container__feedbackMessage">{{ 'FAVORITE.FEEDBACK_MIDIA' | translate }}</h3>
+  </ng-template>
+  <br><br><br><br>
+  <app-footer></app-footer>
+</section>

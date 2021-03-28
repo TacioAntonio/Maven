@@ -1,0 +1,15 @@
+<section class="container">
+  <app-navbar link="/admin/collectUsers"></app-navbar>
+  <app-feedbackMessage [feedbackMessage]="feedbackUpdateUser"></app-feedbackMessage>
+
+
+  <form *ngIf="userForm" class="form center" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <h2>{{name}}</h2><br />
+    <img class="form__avatar" [src]="imagePath" alt="Avatar">
+    <input class="form__input" placeholder="Name" formControlName="name" minlength="1" maxlength="12" required><br />
+    <input class="form__input" placeholder="Email" formControlName="email" minlength="1" maxlength="50" required><br />
+    <input class="form__checkbox" type="checkbox" formControlName="isAdmin"><br /><br />
+
+    <button class="btn" [disabled]="userForm.invalid">Update</button>
+  </form>
+</section>

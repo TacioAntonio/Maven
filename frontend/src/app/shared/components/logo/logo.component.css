@@ -1,0 +1,11 @@
+.logomarca {
+  margin: 12px 0 0 12px;
+  width: 96px;
+}
+
+@media (min-width: 768px) {
+  .logomarca {
+      margin: 32px 0 0 32px;
+      width: 160px;
+  }
+}

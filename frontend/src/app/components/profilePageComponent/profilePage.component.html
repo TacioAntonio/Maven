@@ -1,0 +1,47 @@
+<section class="container">
+  <app-navbar link="/main"></app-navbar>
+  <app-feedbackMessage [feedbackMessage]="feedbackProfile"></app-feedbackMessage>
+
+  <form *ngIf="profileForm" class="form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <input class="offScreen" type="text" formControlName="imagePath">
+    <span class="form__avataresGroup">
+      <img class="form__avatar" [src]="imagePath" alt="Avatar">
+      <div class="form__wrapper">
+        <img class="form__eachAvatar" *ngFor="let avatarPath of avatarsPath" (click)="setAvatar(avatarPath)"
+          [src]="avatarPath" alt="Avatar">
+      </div>
+    </span>
+
+    <span class="form__inputsGroup">
+      <input class="form__input" type="text" placeholder="{{ 'PROFILE.NAME' | translate }}" formControlName="name"
+        minlength="1" maxlength="12" required>
+      <span
+        [ngClass]="{ 'form__inputMessage--invalid': !profileForm.controls.name.valid, 'invisible': profileForm.controls.name.valid }">
+        {{ 'PROFILE.FEEDBACK_NAME' | translate }}</span>
+      <input class="form__input" type="email" placeholder="Email" formControlName="email" minlength="1" maxlength="50"
+        required>
+      <span
+        [ngClass]="{ 'form__inputMessage--invalid': !profileForm.controls.email.valid, 'invisible': profileForm.controls.email.valid }">{{
+        'PROFILE.FEEDBACK_EMAIL' | translate }}</span>
+
+      <button class="btn" type="button" (click)="handleTooglePasswordBox()"
+        [disabled]="profileForm.controls.name.invalid || profileForm.controls.email.invalid || profileForm.controls.name.imageUser">{{
+        'PROFILE.BUTTON' | translate }}</button>
+    </span>
+    <span [ngClass]="{ 'form__background': true, 'invisible': !tooglePasswordBox }">
+      <span class="form__passwordBox">
+        <span class="btn--close" (click)="handleTooglePasswordBox()">X</span>
+        <input class="form__input" type="password" placeholder="{{ 'PROFILE.FEEDBACK_CURRENT_PASSWORD' | translate }}"
+          minlength="8" maxlength="12" formControlName="password" required>
+        <span
+          [ngClass]="{ 'form__inputMessage--invalid': !profileForm.controls.password.valid, 'invisible': profileForm.controls.password.valid }">{{
+          'PROFILE.FEEDBACK_PASSWORD' | translate }}</span>
+
+        <button class="btn" [disabled]="profileForm.invalid">{{ 'PROFILE.CONFIRM_BUTTON' | translate
+          }}</button>
+      </span>
+    </span>
+  </form>
+
+  <app-footer></app-footer>
+</section>

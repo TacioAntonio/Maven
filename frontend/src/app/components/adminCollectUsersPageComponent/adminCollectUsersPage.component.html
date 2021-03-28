@@ -1,0 +1,31 @@
+<section class="container">
+  <app-navbar link="/main"></app-navbar>
+
+  <table class="table" style="overflow-x: scroll;">
+    <thead>
+      <tr>
+        <td class="table__item">Avatar</td>
+        <td class="table__item">Name</td>
+        <td class="table__item">Email</td>
+        <td class="table__item">Operations</td>
+      </tr>
+    </thead>
+    <tbody *ngIf="users" class="table__body">
+      <tr *ngFor="let user of users">
+        <td class="table__item">
+          <img class="table__avatar" [src]="user.imagePath" alt="Avatar">
+        </td>
+        <td class="table__item">
+          <p class="table__subitem">{{user.name}}</p>
+        </td>
+        <td class="table__item">
+          <p class="table__subitem">{{user.email}}</p>
+        </td>
+        <td class="table__item">
+          <button class="btn btn__update" (click)="updateUser(user._id)">Update</button>
+          <button class="btn btn__delete" (click)="deleteUser(user._id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

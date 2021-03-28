@@ -1,0 +1,22 @@
+<section class="container">
+  <app-logo link="/"></app-logo>
+
+  <a class="container__button container__button--login center" routerLink="/login">
+    {{ 'HOME.BUTTON' | translate }} <img src="../../assets/images/play-button.svg" alt="Watch now">
+  </a>
+</section>
+
+<section class="storyCard">
+  <img class="storyCard__imagem" src="../../../assets/images/devices.png" alt="Devices">
+  <h2 class="storyCard__slogan">{{ 'HOME.SLOGAN' | translate }}</h2>
+</section>
+
+<footer class="footer">
+  <p>© Maven</p>
+  <select class="footer__translate" #langselect (change)="handleLanguageStorage(langselect.value)"
+    (change)="translate.use(langselect.value)">
+    <option *ngFor="let lang of translate.getLangs()" [value]="lang">
+      {{ lang === 'pt' ? 'Português' : 'English' }}
+    </option>
+  </select>
+</footer>

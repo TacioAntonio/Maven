@@ -1,0 +1,22 @@
+.container__feedbackMessage {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    padding: 22px;
+    color: white;
+    z-index: 1;
+}
+
+.container__feedbackMessage--error {
+    border: 2px solid #f44336;
+    background-color: #f44336;
+    box-shadow: 0 0 6px #f44336;
+}
+
+.container__feedbackMessage--sucesfull {
+    border: 2px solid #04d362;
+    background-color: #04d362;
+    box-shadow: 0 0 6px #04d362;
+}

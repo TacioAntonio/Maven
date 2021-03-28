@@ -1,0 +1,28 @@
+<section class="container">
+  <app-navbar link="/main"></app-navbar>
+
+  <form *ngIf="midia" class="form center" [formGroup]="midiaForm" (ngSubmit)="onSubmit()">
+    <h2>Update {{midia.name}}</h2><br />
+
+    <img class="form__midiaImage form__midiaImage--center" [src]="midia.imagePath" [title]="midia.name"
+      [alt]="midia.name">
+
+    <input class="form__input" placeholder="Name" formControlName="name">
+    <input class="form__input" placeholder="TrailerUrl" formControlName="trailerUrl">
+
+    <select class="form__select" formControlName="category" required>
+      <option value="" disabled>Choose</option>
+      <option *ngFor="let midia of ['Movies', 'Series']" [value]="midia">{{midia}}</option>
+    </select>
+
+    <span class="form__uploadGroup">
+      <label class="form__upload" for="form__upload">Select a file &#187;</label>
+      <input id="form__upload" type="file" formControlName="imagePath" (input)="fileChoosen($event)">
+      <span [ngClass]="{ 'form__fileMessage' : true, 'invisible' : !choosen }">Selected image</span>
+      <span [ngClass]="{ 'form__fileMessage' : true, 'invisible' : choosen }">Select an image</span>
+    </span>
+
+    <button class="btn" (click)="submitPhoto()" [disabled]="midiaForm.invalid">Update</button>
+  </form>
+
+</section>

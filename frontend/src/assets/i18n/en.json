@@ -1,0 +1,53 @@
+{
+  "HOME": {
+    "BUTTON": "Watch now",
+    "SLOGAN": "Watch anytime, anywhere."
+  },
+  "LOGIN": {
+    "TITLE": "Sign In",
+    "PASSWORD": "Password",
+    "BUTTON": "Sign In",
+    "REMEMBER": "Remember me",
+    "FORGOT": "Forgot password?",
+    "NEWHERE": "New to Maven?",
+    "SIGNUP": "Sign up now.",
+    "FEEDBACK_EMAIL": "It is not a valid email.",
+    "FEEDBACK_PASSWORD": "The password must be longer than 8 characters and less than 12 characters, containing numbers, letters and symbols."
+  },
+  "REGISTER": {
+    "TITLE": "Register",
+    "NAME": "Name",
+    "PASSWORD": "Password",
+    "CONFIRM_PASSWORD": "Confirm",
+    "SHOW_PASSWORD": "Show password",
+    "CANCEL": "Cancel",
+    "PASSWORD_NOT_MATCH": "Passwords do not match",
+    "FEEDBACK_NAME": "The name must contain a maximum of 12 characters and only letters.",
+    "FEEDBACK_EMAIL": "It is not a valid email.",
+    "FEEDBACK_PASSWORD": "The password must be longer than 8 characters and less than 12 characters, containing numbers, letters and symbols."
+  },
+  "PROFILE": {
+    "FEEDBACK_NAME": "Name is invalid.",
+    "FEEDBACK_EMAIL": "It is not a valid email.",
+    "FEEDBACK_PASSWORD": "The password must be longer than 8 characters and less than 12 characters, containing numbers, letters and symbols.",
+    "BUTTON": "Change",
+    "CONFIRM_BUTTON": "Confirm",
+    "FEEDBACK_CURRENT_PASSWORD": "Current password",
+    "NAME": "Name"
+  },
+  "FORGOT_PASSWORD": {
+    "TITLE": "Recover password",
+    "FEEDBACK_EMAIL": "It is not a valid email.",
+    "BUTTON": "Send"
+  },
+  "FAVORITE": {
+    "FEEDBACK_MIDIA": "There is no media in favorites."
+  },
+  "MAIN": {
+    "NAV_PROFILE": "Profile",
+    "NAV_FAVORITES": "Favorites",
+    "NAV_LOGOUT": "Logout",
+    "CHOOSE": "Choose",
+    "SEARCH": "Search"
+  }
+}

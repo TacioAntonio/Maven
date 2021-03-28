@@ -1,0 +1,76 @@
+<main class="container" [ngSwitch]="switchFilteredMidia">
+  <section class="container__streaming" *ngSwitchCase="true">
+    <nav class="nav">
+      <a routerLink="/home">
+        <img class="nav__logotipo" src="../../assets/images/logotipo.png" alt="Logotipo maven" tabindex="1">
+      </a>
+
+      <div class="nav__dropdown">
+        <img *ngIf="user" class="nav__user" [src]="user.user.imagePath" alt="User icon">
+
+        <ul class="nav__list">
+          <li class="nav__item" tabindex="2">
+            <a routerLink="/profile">{{ 'MAIN.NAV_PROFILE' | translate }}</a>
+          </li>
+          <li class="nav__item" tabindex="3">
+            <a routerLink="/favorites">{{ 'MAIN.NAV_FAVORITES' | translate }}</a>
+          </li>
+          <li class="nav__item" (click)="logout()" tabindex="4">{{ 'MAIN.NAV_LOGOUT' | translate }}</li>
+          <li [ngClass]="{ 'nav__item' : true, 'invisible' : !isInvisible }" tabindex="5">
+            <a routerLink="/admin/collectUsers">Usuários</a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <iframe class="container__player" src="https://www.youtube.com/embed/ur0rw-SaFmU" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+      disabled></iframe>
+
+    <form class="mediaBar" [formGroup]="optionToFilteredMidiaForm">
+      <button (click)="changeArrow()" class="btn">
+        <img [src]="arrowBar" alt="Arrow bar movies and series">
+      </button>
+
+      <section class="mediaBar__group">
+        <select class="mediaBar__selectCategory" formControlName="optionsMidia" (click)="handleFilteredMidia()">
+          <option value disabled>{{ 'MAIN.CHOOSE' | translate }}</option>
+          <option *ngFor="let midia of optionsToFiltration" [value]="midia">{{midia}}</option>
+        </select>
+
+        <span>
+          <input class="mediaBar__search" formControlName="optionsMidia" (keyup)="handleSearchFilteredMidia()"
+            type="text" placeholder="{{ 'MAIN.SEARCH' | translate }}">
+          <a [ngClass]="{ 'btn': true, 'invisible' : !isInvisible }" href="/admin/insertMida" role="button">+</a>
+        </span>
+      </section>
+
+      <div class="mediaBar__list">
+        <span class="mediaBar__wrapper" *ngFor="let midia of filteredMidias">
+          <img class="mediaBar__item" (click)="handleMidiaPlayer(midia.trailerUrl)" [src]="midia.imagePath"
+            [title]="midia.name" [alt]="midia.name">
+
+          <img [ngClass]="{ 'star': true, 'star--off': true, 'invisible': midia.isFavorite }"
+            src="../../../assets/images/star-off.svg" alt="Favorite button" (click)="addToFavoriteMidia(midia._id)">
+
+          <img [ngClass]="{ 'star': true, 'invisible': !midia.isFavorite }" src="../../../assets/images/star-on.svg"
+            alt="Favorite button" (click)="removeToFavoriteMidia(midia._id)">
+
+          <span class="mediaBar__operations">
+            <a [ngClass]="{ 'btn' : true, 'btn__update' : true, 'invisible' : !isInvisible }"
+              (click)="updateMidia(midia._id)" role="button">Update</a>
+            <a [ngClass]="{ 'btn' : true, 'btn__delete' : true, 'invisible' : !isInvisible }"
+              (click)="deleteMidia(midia._id)" role="button">Delete</a>
+          </span>
+        </span>
+      </div>
+    </form>
+  </section>
+
+  <section class="container__loading" *ngSwitchCase="false">
+    <img src="../../assets/images/spinner.svg" alt="Loading">
+  </section>
+
+  <app-footer class="invisible"></app-footer>
+</main>

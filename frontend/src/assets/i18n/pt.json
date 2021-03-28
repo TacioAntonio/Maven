@@ -1,0 +1,53 @@
+{
+  "HOME": {
+    "BUTTON": "Assista agora",
+    "SLOGAN": "Assista a qualquer hora, em qualquer lugar."
+  },
+  "LOGIN": {
+    "TITLE": "Entrar",
+    "PASSWORD": "Senha",
+    "BUTTON": "Entrar",
+    "REMEMBER": "Lembrar-se de mim",
+    "FORGOT": "Esqueceu a senha?",
+    "NEWHERE": "Novo por aqui?",
+    "SIGNUP": "Assine agora.",
+    "FEEDBACK_EMAIL": "Não é um email válido.",
+    "FEEDBACK_PASSWORD": "A senha deve ter mais de 8 caracteres e menos de 12 caracteres, contendo números, letras e símbolos."
+  },
+  "REGISTER": {
+    "TITLE": "Registrar",
+    "NAME": "Nome",
+    "PASSWORD": "Senha",
+    "CONFIRM_PASSWORD": "Confirmar",
+    "SHOW_PASSWORD": "Mostrar senha",
+    "CANCEL": "Cancelar",
+    "PASSWORD_NOT_MATCH": "As senhas não coincidem",
+    "FEEDBACK_NAME": "O nome deve conter no máximo 12 caracteres e apenas letras.",
+    "FEEDBACK_EMAIL": "Não é um email válido.",
+    "FEEDBACK_PASSWORD": "A senha deve ter mais de 8 caracteres e menos de 12 caracteres, contendo números, letras e símbolos."
+  },
+  "PROFILE": {
+    "FEEDBACK_NAME": "Nome inválido.",
+    "FEEDBACK_EMAIL": "Não é um email válido.",
+    "FEEDBACK_PASSWORD": "A senha deve ter mais de 8 caracteres e menos de 12 caracteres, contendo números, letras e símbolos.",
+    "BUTTON": "Alterar",
+    "CONFIRM_BUTTON": "Confirmar",
+    "FEEDBACK_CURRENT_PASSWORD": "Senha atual",
+    "NAME": "Nome"
+  },
+  "FORGOT_PASSWORD": {
+    "TITLE": "Recuperar senha",
+    "FEEDBACK_EMAIL": "Não é um email válido.",
+    "BUTTON": "Enviar"
+  },
+  "FAVORITE": {
+    "FEEDBACK_MIDIA": "Não há mídia nos favoritos."
+  },
+  "MAIN": {
+    "NAV_PROFILE": "Perfil",
+    "NAV_FAVORITES": "Favoritos",
+    "NAV_LOGOUT": "Sair",
+    "CHOOSE": "Escolher",
+    "SEARCH": "Pesquisar"
+  }
+}

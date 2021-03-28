@@ -1,0 +1,4 @@
+<span *ngIf="feedbackMessage"
+    [ngClass]="{ 'container__feedbackMessage  container__feedbackMessage--error': true, 'container__feedbackMessage--sucesfull': feedbackMessage.sucessful, 'invisible': feedbackMessage.invisible }">
+    {{feedbackMessage.message}}
+</span>

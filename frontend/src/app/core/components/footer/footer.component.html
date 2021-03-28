@@ -1,0 +1,9 @@
+<footer class="footer">
+    <p class="footer__title">© Maven</p>
+    <select class="footer__translate" #langselect (change)="handleLanguageStorage(langselect.value)"
+        (change)="translate.use(langselect.value)">
+        <option *ngFor="let lang of translate.getLangs()" [value]="lang">
+            {{lang === 'pt' ? 'Português' : 'English'  }}
+        </option>
+    </select>
+</footer>

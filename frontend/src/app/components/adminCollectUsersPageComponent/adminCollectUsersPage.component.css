@@ -1,0 +1,71 @@
+.container {
+    background-color: #0f0f0f;
+    height: 100%;
+    color: rgb(80, 80, 80);
+    font-weight: bold;
+}
+
+.table {
+    text-align: center;
+    display: block;
+}
+
+.table__body {
+    color: white; 
+    background-color: #2c2c2c;
+}
+
+.table__item {
+    width: 100%;
+    padding: 12px;
+}
+
+.btn {
+    color: white;
+    padding: 6px;
+    border-radius: .25rem;
+    cursor: pointer;
+}
+
+.btn:last-child {
+    margin-top: 12px;
+}
+
+.btn__update {
+    background-color: rgb(26, 143, 238);
+    border-color: rgb(26, 143, 238);
+}
+
+.btn__delete {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.table__avatar {
+    width: 50px;
+}
+
+@media (min-width: 768px) {
+    .table {
+        width: 100%;
+        display: table;
+    }
+
+    .table__item {
+        width: auto;
+    }
+
+
+    .table__subitem {
+        transform: translateY(-80%);
+    }
+
+    .btn {
+        transform: translateY(-60%);
+    }
+    
+    .btn:last-child {
+        margin-top: 0;
+        margin-left: 12px;
+    }
+}

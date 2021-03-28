@@ -1,0 +1,103 @@
+.container {
+    background-image: url("../../../assets/images/background-mobile.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100%;
+    position: relative;
+    border-bottom: 8px solid #222;
+}
+
+.container__button {
+    padding: 10px;
+    font-size: 1em;
+    color: #fff;
+}
+
+.container__button--login {
+    text-transform: uppercase;
+    font-weight: 600;
+    background: #e50914;
+    box-shadow: 0 1px 0 rgba(0,0,0,.45);
+    opacity: .8;
+}
+
+.container__button--login:hover,
+.container__button--login:focus {
+    opacity: 1;
+}
+
+.storyCard {
+    background: black;
+    padding: 6em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 8px solid #222;
+}
+
+.storyCard__imagem {
+    width: 100%;
+}
+
+.storyCard__slogan {
+    width: 20ch;
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 24px;
+}
+
+.footer {
+    background: black;
+    padding: 1em;
+    color: #757575;
+    text-align: center;
+    font-size: 1em;
+    position: relative;
+}
+
+.footer__translate {
+    position: absolute;
+    top: 7px;
+    right: 6px;
+    background-color: #000;
+    border: 1px solid #333;
+    padding: 6px;
+    color: #999;
+    font-size: .8em;
+}
+
+@media (min-width: 768px) {
+    .container {
+        background-image: url("../../../assets/images/background-desktop.png");
+    }
+
+    .container__button {
+        padding: 16px 32px;
+        font-size: 1.2em;
+    }
+
+    .storyCard {
+        padding: 6em 0;
+        flex-direction: row;
+    }
+
+    .storyCard__imagem {
+        width: 570px;
+    }
+
+    .storyCard__slogan {
+        font-size: 2em;
+        margin-top: 0;
+    }
+
+    .footer {
+        font-size: 1.2em;
+    }
+
+    .footer__translate {
+        top: 12px;
+        right: 32px;
+    }
+}

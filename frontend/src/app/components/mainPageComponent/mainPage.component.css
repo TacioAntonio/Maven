@@ -1,0 +1,246 @@
+.container,
+.container__streaming {
+  height: 100%;
+}
+
+.nav {
+  background-color: #1b1b1b;
+  padding: 12px 16px 6px;
+  box-shadow: 0 0 6px 5px black;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__user,
+.nav__logotipo {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.nav__list {
+  width: 50%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 12px 12px;
+  background-color: rgb(31, 30, 30);
+  color: #757575;
+  display: none;
+  text-align: center;
+  z-index: 1;
+}
+
+.nav__dropdown:hover .nav__list  {
+  display: flex;
+  flex-direction: column;
+  animation: moveLeftNav 2s;
+}
+
+@keyframes moveLeftNav {
+  to {
+    transform: translateX(0%);
+  }
+  from {
+    transform: translateX(100%);
+  }
+  0% {
+    opacity: .5;
+  }
+  10% {
+    opacity: .6;
+  }
+  20% {
+    opacity: .7;
+  }
+  30% {
+    opacity: .8;
+  }
+  40% {
+    opacity: .9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.nav__item {
+  font-weight: bold;
+  margin-top: 12px;
+  opacity: .8;
+  cursor: pointer;
+}
+
+.nav__item:hover,
+.nav__item:focus {
+  opacity: 1;
+}
+
+.nav__item:first-child {
+  margin-top: 0;
+}
+
+.container__loading {
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container__player {
+  width: 100%;
+  height: 100%;
+}
+
+.mediaBar {
+  position: relative;
+  width: 100%;
+  background-color: #1b1b1b;
+  box-shadow: 0 0 6px 5px black;
+  padding: 0 12px 12px 12px;
+}
+
+.mediaBar > .btn {
+  position: relative;
+  top: -18px;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #1b1b1b;
+  border-top: 1px solid black;
+  cursor: pointer;
+}
+
+.mediaBar__group {
+  display: none;
+  justify-content: space-between;
+}
+
+.mediaBar__selectCategory {
+   width: 120px; 
+   height: 32px; 
+   background-color: #333333;
+   color: rgb(138, 137, 137);
+   padding-left: 6px;
+   font-weight: bold;
+   cursor: pointer;
+}
+
+.mediaBar__search {
+  background-color: #333333;
+  color: rgb(138, 137, 137);
+  padding-left: 6px;
+  height: 32px; 
+}
+
+.mediaBar__group .btn {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #757575;
+  margin-left: 12px;
+}
+
+.mediaBar__list {
+  display: none;
+  margin-top: 12px;
+  padding-bottom: 12px;
+  overflow-x: scroll;
+}
+
+.mediaBar__wrapper {
+  position: relative;
+}
+
+.mediaBar__item {
+  margin-right: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 6px 2px black;
+  opacity: .5;
+}
+
+.mediaBar__item:hover,
+.mediaBar__item:focus {
+  opacity: 1;
+}
+
+.star {
+  width: 32px;
+  height: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 6px;
+  margin-right: 18px;
+  cursor: pointer;
+}
+
+.star--off {
+  opacity: .5;
+}
+
+.star--off:hover,
+.star--off:focus {
+  opacity: 1;
+}
+
+.mediaBar__operations {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+}
+
+.mediaBar__operations > .btn {
+  color: white;
+  flex: 1;
+  text-align: center;
+  opacity: .5;
+  cursor: pointer;
+  padding: 12px 0;
+}
+
+.mediaBar__operations > .btn:hover,
+.mediaBar__operations > .btn:focus {
+  opacity: 1;
+}
+
+.btn__update {
+  background-color: rgb(26, 143, 238);
+  border-color: rgb(26, 143, 238);
+}
+
+.btn__delete {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  margin-right: 12px;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    padding: 12px 64px 6px 16px;
+  }
+
+  .nav__dropdown {
+    position: relative;
+  }
+
+  .nav__dropdown:hover .nav__list  {
+    animation: none;
+  }
+
+  .nav__list {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 100%;
+    right: 50%;
+    transform: translateX(50%);
+    border-radius: 4px;
+    padding: 18px;
+    display: none;
+  }
+}

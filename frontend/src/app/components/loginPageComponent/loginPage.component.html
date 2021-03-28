@@ -1,0 +1,43 @@
+<section class="container">
+  <app-logo link="/home"></app-logo>
+  <app-feedbackMessage [feedbackMessage]="feedbackLogin"></app-feedbackMessage>
+
+  <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h2 class="form__title">{{ 'LOGIN.TITLE' | translate }}</h2>
+    <span class="form__inputsGroup">
+      <p class="form__inputName">Email</p>
+      <input [ngClass]="{ 'form__input': true, 'form__input--invalid': !loginForm.controls.email.valid }" type="email"
+        minlength="1" maxlength="50" formControlName="email" required>
+
+      <span
+        [ngClass]="{ 'invisible': loginForm.controls.email.valid, 'form__inputMessage--invalid': !loginForm.controls.email.valid }">{{
+        'LOGIN.FEEDBACK_EMAIL' | translate }}</span>
+    </span>
+    <span class="form__inputsGroup">
+      <p class="form__inputName">{{ 'LOGIN.PASSWORD' | translate }}</p>
+      <input [ngClass]="{ 'form__input': true, 'form__input--invalid': !loginForm.controls.password.valid }"
+        [type]="typeInput" minlength="8" maxlength="12" formControlName="password" required>
+
+      <img class="form__toggleViewPassword" [src]="tooglePassword" alt="Show/Hidden password"
+        (click)="handleInputPassword()" />
+
+      <span
+        [ngClass]="{ 'invisible': loginForm.controls.password.valid, 'form__inputMessage--invalid': !loginForm.controls.password.valid }">{{
+        'LOGIN.FEEDBACK_PASSWORD' | translate }}</span>
+    </span>
+
+    <button class="form__button" [disabled]="loginForm.invalid">{{ 'LOGIN.BUTTON' | translate }}</button>
+
+    <div class="inline">
+      <a routerLink="/forgot_password" class="form__link">{{ 'LOGIN.FORGOT' | translate }}</a>
+    </div>
+
+    <span class="form__bottom">
+      <hr class="form__line">
+      <span class="form__signIn">{{ 'LOGIN.NEWHERE' | translate }} <a routerLink="/register" class="form__link">{{
+          'LOGIN.SIGNUP' | translate }}</a></span>
+    </span>
+  </form>
+  <br><br><br><br>
+  <app-footer></app-footer>
+</section>

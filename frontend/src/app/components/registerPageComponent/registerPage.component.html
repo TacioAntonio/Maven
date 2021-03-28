@@ -1,0 +1,76 @@
+<section class="container">
+  <app-logo link="/home"></app-logo>
+
+  <!-- Shared -->
+  <!-- 
+    container__feedbackMessage
+    container__feedbackMessage--sucesfull
+    container__feedbackMessage--error 
+    Global: invisible
+  -->
+  <!-- <span *ngIf="feedbackCreatedUser"
+    [ngClass]="{ 'container__feedbackMessage  container__feedbackMessage--error': true, 'invisible': feedbackCreatedUser.invisible, 'container__feedbackMessage--sucesfull': feedbackCreatedUser.sucessful }">
+    {{feedbackCreatedUser.message}}
+  </span> -->
+
+  <app-feedbackMessage [feedbackMessage]="feedbackCreatedUser"></app-feedbackMessage>
+
+  <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <h2 class="form__title">{{ 'REGISTER.TITLE' | translate }}</h2>
+
+    <span class="form__inputsGroup">
+      <p class="form__inputName">{{ 'REGISTER.NAME' | translate }}</p>
+      <input [ngClass]="{ 'form__input': true, 'form__input--invalid': !registerForm.controls.name.valid }" type="text"
+        minlength="1" maxlength="12" formControlName="name" required>
+      <span
+        [ngClass]="{ 'invisible': registerForm.controls.name.valid, 'form__inputMessage--invalid': !registerForm.controls.name.valid }">{{
+        'REGISTER.FEEDBACK_NAME' | translate }}</span>
+    </span>
+
+    <span class="form__inputsGroup">
+      <p class="form__inputName">Email</p>
+
+      <input [ngClass]="{ 'form__input': true, 'form__input--invalid': !registerForm.controls.email.valid}" type="email"
+        minlength="1" maxlength="50" formControlName="email" required>
+
+      <span
+        [ngClass]="{ 'invisible': registerForm.controls.email.valid, 'form__inputMessage--invalid': !registerForm.controls.email.valid }">{{
+        'REGISTER.FEEDBACK_EMAIL' | translate }}</span>
+    </span>
+    <div class="inline">
+      <span class="form__inputsGroup">
+        <p class="form__inputName">{{ 'REGISTER.PASSWORD' | translate }}</p>
+        <input [ngClass]="{ 'form__input': true, 'form__input--invalid': !registerForm.controls.password.valid }"
+          [type]="typeInput" (keyup)="handleEqualPasswords()" minlength="8" maxlength="12" formControlName="password"
+          autocomplete="on" required>
+      </span>
+
+      <span class="form__inputsGroup">
+        <p class="form__inputName">{{ 'REGISTER.CONFIRM_PASSWORD' | translate }}</p>
+        <input class="form__input" [type]="typeInput" (keyup)="handleEqualPasswords()" minlength="8" maxlength="12"
+          formControlName="confirmPassword" autocomplete="on" required>
+      </span>
+
+      <span [ngClass]="{ 'form__inputPasswordMessage': true, 'invisible': !hasEqualPassword }">{{
+        'REGISTER.PASSWORD_NOT_MATCH' | translate }}</span>
+    </div>
+
+    <span
+      [ngClass]="{ 'invisible': registerForm.controls.password.valid, 'form__inputMessage--invalid': !registerForm.controls.password.valid }">{{
+      'REGISTER.FEEDBACK_PASSWORD' | translate }}</span>
+
+    <label class="form__checkboxGroup">{{ 'REGISTER.SHOW_PASSWORD' | translate }}
+      <input type="checkbox" (change)="handleInputPassword()">
+      <span class="checkmark"></span>
+    </label>
+
+    <div class="inline">
+      <button class="form__button" [disabled]="!registerForm.valid">{{ 'REGISTER.TITLE' | translate }}</button>
+      <a class="form__button" routerLink="/login" role="button">
+        {{ 'REGISTER.CANCEL' | translate }}
+      </a>
+    </div>
+  </form>
+  <br><br><br>
+  <app-footer></app-footer>
+</section>

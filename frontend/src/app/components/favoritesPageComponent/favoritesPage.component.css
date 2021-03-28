@@ -1,0 +1,40 @@
+.container {
+  background-color: #0f0f0f;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.container__feedbackMessage {
+  color: rgb(80, 80, 80);
+  position: relative;
+  top: 40%;
+  transform: translateY(-40%);
+  text-align: center;
+}
+
+.container__wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 32px;
+}
+
+.container__item {
+  margin: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 6px 2px black;
+}
+
+.container__item:first-child {
+  margin-top: 0;
+}
+
+@media (min-width: 400px) {
+  .container__wrapper {
+    justify-content: start;
+  }
+
+  .container__item {
+    margin-top: 0;
+  }
+}
