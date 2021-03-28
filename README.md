@@ -1,5 +1,5 @@
 #  <img src="./images/logotipo.png" width="32" height="32"> Maven
-> A streaming system made with Angular, Node.js and PWA - Progress Web App.
+> A streaming system made with Angular, Node.js and PWA - Progressive Web App.
 
 <span style="position: relative; left: 35%; ">
 
